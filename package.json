@@ -1,0 +1,24 @@
+{
+  "name": "rt-polling",
+  "version": "1.0.0",
+  "description": "Real time polling tool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rittme/RT-polling.git"
+  },
+  "keywords": [
+    "real-time",
+    "polling",
+    "interactive"
+  ],
+  "author": "Bernardo Rittmeyer",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rittme/RT-polling/issues"
+  },
+  "homepage": "https://github.com/rittme/RT-polling#readme"
+}
