@@ -2,7 +2,7 @@
   "name": "rt-polling",
   "version": "1.0.0",
   "description": "Real time polling tool",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -11,14 +11,21 @@
     "url": "git+https://github.com/rittme/RT-polling.git"
   },
   "keywords": [
-    "real-time",
-    "polling",
-    "interactive"
+    "real",
+    "time",
+    "polling"
   ],
   "author": "Bernardo Rittmeyer",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/rittme/RT-polling/issues"
   },
-  "homepage": "https://github.com/rittme/RT-polling#readme"
+  "homepage": "https://github.com/rittme/RT-polling#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "hogan-express": "^0.5.2",
+    "hogan.js": "^3.0.2",
+    "node-uuid": "^1.4.7",
+    "socket.io": "^1.4.5"
+  }
 }

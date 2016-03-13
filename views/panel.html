@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Panel</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <a class="pure-button pure-button-primary" id="next-btn" href="panel/next">Next Question</a><br>
+  {{#config}}
+    Current Question: {{currentQuestion}}
+  {{/config}}
+  {{#questions}}
+    <ul>
+      <li>{{0}}</li>
+      <li>{{1}}</li>
+      <li>{{2}}</li>
+      <li>{{3}}</li>
+    </ul>
+  {{/questions}}
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="js/panel.js"></script>
+</body>
+</html>
