@@ -12,20 +12,68 @@ app.use(require('./controllers'))
 
 app.set("questions", require('./poll/questions'));
 
-app.set("config", {
-  currentQuestion: 1,
-})
+var config = {
+  currentQuestion: 0,
+};
+app.set("config", config);
 
-
-
+var voteArray = createVoteArray(app.get("questions"));
+console.log(voteArray);
+app.set("votes", voteArray);
 io.on('connection', function(socket){
   console.log('a user connected');
+
+  socket.on('next question', function(){
+    config.currentQuestion++;
+    io.emit('question update', config.currentQuestion);
+  });
+
+  socket.on('vote', function(ans){
+    voteArray[config.currentQuestion].options[ans].votes++;
+    console.log('Vote: ' + ans);
+    socket.emit('vote received');
+    io.emit('vote update', voteArray);
+  });
+
+  socket.on('block question', function(){
+    io.emit('question blocked', winnerQuestion());
+    console.log(winnerQuestion());
+  });
+
+  socket.on('reset', function(){
+    config.currentQuestion = 0;
+    voteArray = createVoteArray(app.get("questions"));
+    io.emit('question update', config.currentQuestion);
+    io.emit('vote update', voteArray);
+  });
 });
-
-
-
 
 http.listen(3000, function() {
   console.log('Listening on port 3000...')
 })
 
+function createVoteArray(questions) {
+  return questions.map(function(opts){
+      return {
+        question: opts.question,
+        options: opts.options.map(function(opt) {
+        return {
+          option: opt,
+          votes: 0
+        }})
+      }
+  });
+}
+
+function winnerQuestion() {
+  var max = -1;
+  var winner = -1;
+  var opt = voteArray[config.currentQuestion].options;
+  for(var i = 0; i< opt.length; i++) {
+    if(opt[i].votes > max) {
+      max = opt[i].votes;
+      winner = i;
+    }
+  }
+  return winner;
+}

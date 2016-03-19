@@ -3,7 +3,7 @@ var express = require('express')
 
 router.get('/', function(req, res) {
   res.render('panel', {config: req.app.get("config"),
-                       questions: req.app.get("questions")
+                       votes: JSON.stringify(req.app.get("votes"))
                       }
   );
 })

@@ -4,22 +4,21 @@
   <meta charset="UTF-8">
   <title>Panel</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
   <link rel="stylesheet" href="css/main.css">
 </head>
-<body>
-  <a class="pure-button pure-button-primary" id="next-btn" href="panel/next">Next Question</a><br>
+<body class="panel">
+  <a class="button" id="next-btn" href="panel/next">Next Question</a>
+  <a class="button green" id="block-btn">Block Question</a>
+  <a class="button red" id="reset-btn">Reset</a><br>
   {{#config}}
-    Current Question: {{currentQuestion}}
+    <div class="curr-question">Current Question: <strong id="curr-question">{{config.currentQuestion}}</strong></div>
   {{/config}}
-  {{#questions}}
-    <ul>
-      <li>{{0}}</li>
-      <li>{{1}}</li>
-      <li>{{2}}</li>
-      <li>{{3}}</li>
-    </ul>
-  {{/questions}}
+  <div id="questions">
+
+  </div>
+  <script>
+    var questions = {{{votes}}};
+  </script>
   <script src="/socket.io/socket.io.js"></script>
   <script src="js/panel.js"></script>
 </body>

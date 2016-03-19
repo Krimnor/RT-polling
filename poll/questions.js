@@ -1,13 +1,31 @@
 module.exports = [
-  [
-    "Q1 Option 1",
-    "Q1 Option 2",
-    "Q1 Option 3"
-  ],
-  [
-    "Q2 Option 1",
-    "Q2 Option 2",
-    "Q2 Option 3"
-  ],
-
+  {
+    question: "Le bizuth est?",
+    options: [
+      "Sarcastique.",
+      "Frustré.",
+    ],
+  },
+  {
+    question: "Quelle est la prochaine action?",
+    options: [
+      "Chanter du Johnny.",
+      "Prendre sa douche avec DSK.",
+      "L'entracte (il se fait soif...)"
+    ],
+  },
+  {
+    question: "Famille du bizuth?",
+    options: [
+      "Parrain bourré.",
+      "Parrain hyper parternel.",
+    ],
+  },
+  {
+    question: "Le coturne est?",
+    options: [
+      "Maniaque.",
+      "Bordelique.",
+    ],
+  },
 ]

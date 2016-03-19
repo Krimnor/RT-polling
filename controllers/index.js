@@ -5,7 +5,7 @@ var express = require('express')
 
 router.use('/vote', require('./vote'));
 router.use('/panel', require('./panel'));
-//router.use('/display', require('./display'));
+router.use('/display', require('./display'));
 
 router.get('/', function(req, res) {
   res.render('voter', {id: uuid.v4()});
