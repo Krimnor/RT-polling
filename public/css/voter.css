@@ -8,16 +8,16 @@ body {
   height:100%;
   flex-direction: row;
   flex-flow:wrap;
+  flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   align-items: flex-start;
 }
 .vote-btn {
   background:red;
-  flex-grow:0;
   justify-content: space-around;
   height:50%;
-  flex-basis:50%;
+  flex-basis:100%;
   cursor:pointer;
   display:flex;
   align-items:center;

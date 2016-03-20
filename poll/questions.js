@@ -1,31 +1,23 @@
 module.exports = [
   {
-    question: "Le bizuth est?",
+    question: "Le bizuth est ?",
     options: [
-      "Sarcastique.",
-      "Frustré.",
+      "Sarcastique",
+      "Frustré",
     ],
   },
   {
-    question: "Quelle est la prochaine action?",
+    question: "Famille du bizuth ?",
     options: [
-      "Chanter du Johnny.",
-      "Prendre sa douche avec DSK.",
-      "L'entracte (il se fait soif...)"
+      "Parrain bourré",
+      "Parrain hyper parternel",
     ],
   },
   {
-    question: "Famille du bizuth?",
+    question: "Le coturne est ?",
     options: [
-      "Parrain bourré.",
-      "Parrain hyper parternel.",
-    ],
-  },
-  {
-    question: "Le coturne est?",
-    options: [
-      "Maniaque.",
-      "Bordelique.",
+      "Maniaque",
+      "Bordelique",
     ],
   },
 ]
