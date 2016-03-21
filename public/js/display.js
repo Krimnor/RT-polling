@@ -1,7 +1,13 @@
 var socket = io();
 
 socket.on('question update', function(question){
+  currQuestion = question;
   populateSlides(question);
+});
+
+socket.on('vote update', function(question){
+  questions = question;
+  populateSlides(currQuestion);
 });
 
 socket.on('question blocked', function(question){
@@ -21,7 +27,7 @@ function populateSlides(curr) {
     if(question.options[i]) {
       console.log(qDisplay);
       qDisplay.classList.remove("hidden");
-      qDisplay.firstChild.innerHTML = (i+1) + ") " + question.options[i].option;
+      qDisplay.firstChild.innerHTML = (i+1) + ") " + question.options[i].option + " - <div class='votes-counter'>" + question.options[i].votes + "</div>";
     } else {
       console.log(qDisplay);
       qDisplay.classList.add("hidden");

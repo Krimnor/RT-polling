@@ -9,8 +9,8 @@ module.exports = [
   {
     question: "Famille du bizuth ?",
     options: [
-      "Parrain bourré",
-      "Parrain hyper parternel",
+      "Parrain fêtard",
+      "Parrain hyper paternel",
     ],
   },
   {
